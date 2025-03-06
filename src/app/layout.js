@@ -1,6 +1,7 @@
 // src/app/layout.js
 import './globals.css';
 import { Poppins, Montserrat } from 'next/font/google';
+import Link from 'next/link';
 
 // Configuración de fuentes con next/font
 const poppins = Poppins({ 
@@ -45,12 +46,12 @@ export default function RootLayout({ children }) {
           <div className="container mx-auto px-4 text-center">
             <p>© {new Date().getFullYear()} FELADE. Todos los derechos reservados.</p>
             <div className="mt-2">
-              <a href="/privacidad" className="text-sm text-gray-300 hover:text-white mx-2">
+              <Link href="/privacidad" className="text-sm text-gray-300 hover:text-white mx-2">
                 Política de Privacidad
-              </a>
-              <a href="/terminos" className="text-sm text-gray-300 hover:text-white mx-2">
+              </Link>
+              <Link href="/terminos" className="text-sm text-gray-300 hover:text-white mx-2">
                 Términos y Condiciones
-              </a>
+              </Link>
             </div>
           </div>
         </footer>

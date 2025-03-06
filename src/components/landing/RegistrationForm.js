@@ -4,10 +4,11 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useRouter } from 'next/navigation'; // Cambio a la importación actualizada
+import { useRouter } from 'next/navigation';
 import FormInput from '../common/FormInput';
 import Button from '../common/Button';
 import { registrationSchema } from '../../lib/validation/registrationSchema';
+import Link from 'next/link';
 
 const RegistrationForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -63,7 +64,7 @@ const RegistrationForm = () => {
         Regístrate para acceder a las 2 clases gratuitas
       </p>
       
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <FormInput
           label="Nombre completo"
           name="name"
@@ -95,35 +96,49 @@ const RegistrationForm = () => {
         />
         
         <div className="mb-6">
-          <label className="flex items-start">
-            <input
-              type="checkbox"
-              {...register('consent')}
-              className="mt-1 mr-2"
-            />
-            <span className="text-sm text-gray-600 text-left">
-              Acepto recibir información sobre este taller y entiendo la{' '}
-              <a href="/privacidad" className="text-primary hover:underline">
-                política de privacidad
-              </a>
-              . No recibirás correos molestos ni ajenos a tu interés.
-            </span>
-          </label>
-          {errors.consent && (
-            <p className="mt-1 text-sm text-red-600 text-left">{errors.consent.message}</p>
-          )}
-        </div>
+  <label className="flex items-start">
+    <input
+      type="checkbox"
+      {...register('consent')}
+      className="mt-1 mr-2"
+    />
+    <span className="text-sm text-gray-600 text-left">
+      Acepto recibir información sobre este taller y entiendo la{' '}
+      <Link href="/privacidad" className="text-primary hover:underline" target="_blank">
+        política de privacidad
+      </Link>
+      {' '}y los{' '}
+      <Link href="/terminos" className="text-primary hover:underline" target="_blank">
+        términos y condiciones
+      </Link>
+      . No recibirás correos molestos ni ajenos a tu interés.
+    </span>
+  </label>
+  {errors.consent && (
+    <p className="mt-1 text-sm text-red-600 text-left">{errors.consent.message}</p>
+  )}
+</div>
         
-        <Button
+        <button
           type="submit"
-          variant="success"
-          size="lg"
-          fullWidth
-          isSubmitting={isSubmitting}
-          className="bg-green-600 hover:bg-green-700 py-4"
+          disabled={isSubmitting}
+          className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg shadow-lg transition-all duration-300 flex items-center justify-center"
         >
-          ✓ Quiero Acceder a las Clases Gratis
-        </Button>
+          {isSubmitting ? (
+            <div className="flex items-center justify-center">
+              <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Procesando...
+            </div>
+          ) : (
+            <>
+              <span className="bg-white text-green-600 rounded-full w-6 h-6 flex items-center justify-center mr-2 text-sm font-bold">✓</span>
+              Quiero Acceder a las Clases Gratis
+            </>
+          )}
+        </button>
       </form>
     </div>
   );
