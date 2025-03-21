@@ -27,29 +27,32 @@ const Hero = () => {
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex justify-around items-center mb-12 flex-wrap gap-6">
-          <Image
+        {/* Logos con línea divisoria vertical */}
+        <div className="flex justify-center items-center mb-12 max-w-4xl mx-auto">
+          <div className="flex items-center justify-end w-1/2 pr-6">
+            <Image
               src="/images/upaz-logo-white.png"
               alt="UPAZ"
-              width={200}
-              height={60}
+              width={250}
+              height={75}
               style={{ objectFit: 'contain' }}
             />
+          </div>
+          
+          {/* Línea divisoria vertical */}
+          <div className="h-16 w-px bg-white bg-opacity-40"></div>
+          
+          <div className="flex items-center justify-start w-1/2 pl-6">
             <Image
               src="/images/logoblanco.png"
               alt="FELADE"
-              width={200}
-              height={60}
+              width={250}
+              height={75}
               style={{ objectFit: 'contain' }}
             />
-          {/* <Image
-            src="/images/ssnf-logo-white.png"
-            alt="Superintendencia de Sujetos No Financieros"
-            width={200}
-            height={60}
-            style={{ objectFit: 'contain' }}
-          /> */}
+          </div>
         </div>
+        
         {/* Contador de tiempo regresivo */}
         <motion.div 
           className="bg-gray-800 bg-opacity-50 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-center"

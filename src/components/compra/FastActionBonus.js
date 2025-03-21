@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { FaClock, FaFire } from 'react-icons/fa';
 
 const FastActionBonus = () => {
-  const [availablePlaces, setAvailablePlaces] = useState(16);
+  const [availablePlaces, setAvailablePlaces] = useState(30);
   
   // Simulación de escasez (en producción, esto debería venir de tu backend)
   useEffect(() => {
@@ -16,7 +16,7 @@ const FastActionBonus = () => {
     if (storedPlaces) {
       setAvailablePlaces(parseInt(storedPlaces, 10));
     } else {
-      localStorage.setItem('availablePlaces', '16');
+      localStorage.setItem('availablePlaces', '30');
     }
     
     // Decrementar aleatoriamente (para efecto de escasez)
@@ -48,8 +48,7 @@ const FastActionBonus = () => {
           </div>
         </motion.div>
         
-        {/* Cambiando el fondo del recuadro para mejor contraste */}
-        <div className="max-w-4xl mx-auto bg-gray-800 bg-opacity-80 rounded-lg p-8 border border-gray-700">
+        <div className="max-w-4xl mx-auto bg-white bg-opacity-10 rounded-lg p-8 border border-white border-opacity-20">
           <div className="flex flex-col md:flex-row gap-8 items-center mb-6">
             <div className="w-full md:w-1/3">
               <div className="relative w-full h-64">
@@ -68,7 +67,7 @@ const FastActionBonus = () => {
               </h3>
               <p className="text-lg mb-4">
                 Las primeras <strong>30 personas</strong> que se inscriban en las próximas 24 horas recibirán 
-                <strong> GRATIS</strong> 1 sesión de asesoría personalizada semanal de 30 minutos con un experto vía zoom, durante 3 meses.
+                <strong> GRATIS</strong> GRATIS 1 sesión de asesoría personalizada semanal de 30 minutos con un experto vía zoom, durante 3 meses.
               </p>
               <div className="inline-block bg-secondary text-white px-6 py-3 rounded-lg font-bold text-xl">
                 Valorada en $997
@@ -76,8 +75,7 @@ const FastActionBonus = () => {
             </div>
           </div>
           
-          {/* Cambiando el fondo del aviso de disponibilidad para mejor contraste */}
-          <div className="bg-primary bg-opacity-90 rounded-lg p-6 text-center mt-6">
+          <div className="bg-primary-light bg-opacity-50 rounded-lg p-6 text-center mt-6">
             <div className="flex items-center justify-center mb-2">
               <FaFire className="text-secondary text-xl mr-2" />
               <h4 className="text-xl font-bold">DISPONIBILIDAD LIMITADA</h4>
