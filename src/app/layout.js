@@ -2,6 +2,7 @@
 import './globals.css';
 import { Poppins, Montserrat } from 'next/font/google';
 import Link from 'next/link';
+import MetaPixel from '../components/tracking/MetaPixel';
 
 // Configuración de fuentes con next/font
 const poppins = Poppins({ 
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" className={`${poppins.variable} ${montserrat.variable} scroll-smooth`}>
       <body className="font-sans text-gray-800 antialiased">
+      <MetaPixel />
         {children}
         <footer className="bg-primary-light text-white py-6">
           <div className="container mx-auto px-4 text-center">

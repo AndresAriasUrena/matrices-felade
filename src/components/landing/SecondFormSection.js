@@ -1,13 +1,10 @@
 // src/components/landing/SecondFormSection.js
 "use client"; // Marcador para componente cliente
 
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { FaCheck, FaGraduationCap, FaLock, FaClock } from 'react-icons/fa';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import { useRouter } from 'next/navigation';
+import BrevoFormEmbed from './BrevoFormEmbed';
 
 const BenefitItem = ({ icon, text }) => (
   <li className="flex items-start">
@@ -16,73 +13,7 @@ const BenefitItem = ({ icon, text }) => (
   </li>
 );
 
-// Esquema de validación
-const registrationSchema = yup.object().shape({
-  name: yup
-    .string()
-    .required('Por favor, ingresa tu nombre')
-    .min(3, 'El nombre debe tener al menos 3 caracteres'),
-  
-  email: yup
-    .string()
-    .required('Por favor, ingresa tu correo electrónico')
-    .email('Por favor, ingresa un correo electrónico válido'),
-  
-  phone: yup
-    .string()
-    .required('Por favor, ingresa tu número telefónico')
-    .matches(/^(\+\d{1,3})?\s?\(?\d{1,4}\)?[\s.-]?\d{1,4}[\s.-]?\d{1,9}$/, 'Por favor, ingresa un número telefónico válido'),
-});
-
 const SecondFormSection = () => {
-  const router = useRouter();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const { 
-    register, 
-    handleSubmit, 
-    formState: { errors } 
-  } = useForm({
-    resolver: yupResolver(registrationSchema),
-    mode: 'onBlur'
-  });
-  
-  const onSubmit = async (data) => {
-    setIsSubmitting(true);
-    
-    try {
-      // Guardar datos en localStorage
-      localStorage.setItem('leadData', JSON.stringify(data));
-      
-      // Intentar llamar a la API
-      try {
-        const response = await fetch('/api/register', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        });
-        
-        // Si hay error en la API, continuamos con la redirección
-        if (!response.ok) {
-          console.warn('Error al registrar en la API, pero continuamos con la redirección');
-        }
-      } catch (apiError) {
-        console.warn('Error al llamar a la API, pero continuamos con la redirección:', apiError);
-      }
-      
-      // Redirección programática a la página de WhatsApp
-      window.location.href = '/whatsapp';
-      
-    } catch (error) {
-      console.error('Error al registrar:', error);
-      alert('Hubo un problema al procesar tu registro. Por favor, intenta nuevamente.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <section className="py-16 bg-primary text-white relative overflow-hidden">
       {/* Fondo con overlay */}
@@ -147,91 +78,9 @@ const SecondFormSection = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: "-50px" }}
           >
-            <div className="p-6 md:p-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-primary mb-2">
-                  Reserva Tu Lugar Ahora
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  Regístrate para acceder a las 2 clases gratuitas
-                </p>
-                
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1 text-left">Nombre completo</label>
-                    <input 
-                      type="text"
-                      {...register('name')}
-                      className={`w-full p-3 border rounded-lg focus:ring-2 focus:outline-none transition-all duration-200 ${errors.name ? 'border-red-500 focus:ring-red-200' : 'border-gray-300 focus:ring-primary focus:border-primary'}`}
-                      placeholder="Ej. Juan Pérez"
-                    />
-                    {errors.name && (
-                      <p className="mt-1 text-sm text-red-600 text-left">{errors.name.message}</p>
-                    )}
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1 text-left">Correo electrónico</label>
-                    <input 
-                      type="email"
-                      {...register('email')}
-                      className={`w-full p-3 border rounded-lg focus:ring-2 focus:outline-none transition-all duration-200 ${errors.email ? 'border-red-500 focus:ring-red-200' : 'border-gray-300 focus:ring-primary focus:border-primary'}`}
-                      placeholder="tu@correo.com"
-                      autoComplete="email"
-                    />
-                    {errors.email && (
-                      <p className="mt-1 text-sm text-red-600 text-left">{errors.email.message}</p>
-                    )}
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1 text-left">Teléfono (con código de país)</label>
-                    <input 
-                      type="tel"
-                      {...register('phone')}
-                      className={`w-full p-3 border rounded-lg focus:ring-2 focus:outline-none transition-all duration-200 ${errors.phone ? 'border-red-500 focus:ring-red-200' : 'border-gray-300 focus:ring-primary focus:border-primary'}`}
-                      placeholder="+123 456 7890"
-                    />
-                    {errors.phone && (
-                      <p className="mt-1 text-sm text-red-600 text-left">{errors.phone.message}</p>
-                    )}
-                  </div>
-                  
-                  <div className="mb-6">
-                    <label className="flex items-start">
-                      <input
-                        type="checkbox"
-                        {...register('consent')}
-                        className="mt-1 mr-2"
-                      />
-                      <span className="text-sm text-gray-600 text-left">
-                        Acepto recibir información sobre este taller. No recibirás correos molestos ni ajenos a tu interés.
-                      </span>
-                    </label>
-                  </div>
-                  
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg shadow-lg transition-all duration-300 flex items-center justify-center"
-                  >
-                    {isSubmitting ? (
-                      <div className="flex items-center">
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Procesando...
-                      </div>
-                    ) : (
-                      <>
-                        <span className="bg-white text-green-600 rounded-full w-6 h-6 flex items-center justify-center mr-2 text-sm font-bold">✓</span>
-                        Quiero Acceder a las Clases Gratis
-                      </>
-                    )}
-                  </button>
-                </form>
-              </div>
+            <div className="">
+              {/* Componente de formulario Brevo */}
+              <BrevoFormEmbed className="w-full" />
             </div>
           </motion.div>
         </div>

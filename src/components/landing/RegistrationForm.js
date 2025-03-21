@@ -57,12 +57,12 @@ const RegistrationForm = () => {
   
   return (
     <div className="text-center">
-      <h3 className="text-2xl font-bold text-primary mb-2">
+      {/* <h3 className="text-2xl font-bold text-primary mb-2">
         Reserva Tu Lugar Ahora
       </h3>
       <p className="text-gray-600 mb-6">
         Regístrate para acceder a las 2 clases gratuitas
-      </p>
+      </p> */}
       
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <FormInput

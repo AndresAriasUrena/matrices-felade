@@ -38,13 +38,13 @@ const HeroSection = () => {
             height={60}
             style={{ objectFit: 'contain' }}
           />
-          <Image
+          {/* <Image
             src="/images/ssnf-logo-white.png"
             alt="Superintendencia de Sujetos No Financieros"
             width={200}
             height={60}
             style={{ objectFit: 'contain' }}
-          />
+          /> */}
         </div>
         
         <div className="flex flex-col items-center justify-center">
@@ -62,22 +62,11 @@ const HeroSection = () => {
             <h2 className="text-xl md:text-2xl font-medium mb-8 max-w-3xl mx-auto">
               Aprende el método <strong>Probado</strong> para diseñar y testear matrices de riesgo de manera práctica y efectiva. Un taller en vivo donde transformarás la teoría en acción con pasos claros y aplicables de inmediato.
             </h2>
+            <h3 className="text-lg md:text-xl font-medium mb-8 max-w-2xl mx-auto text-gray-200">
+              3 clases: 21, 22 y 23 de Abril <br/> Evento <strong>Online</strong> y <strong>sin costo.</strong>
+            </h3>
             
-            {/* <div>
-              <motion.div
-                className="inline-block"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <a 
-                  href="#registro" 
-                  className="bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300 flex items-center justify-center"
-                >
-                  <span className="bg-white text-green-600 rounded-full w-6 h-6 flex items-center justify-center mr-2 text-sm font-bold">✓</span>
-                  Regístrate Gratis Ahora
-                </a>
-              </motion.div>
-            </div> */}
+            
           </motion.div>
         </div>
       </div>
