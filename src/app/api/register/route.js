@@ -61,11 +61,24 @@ export async function POST(request) {
           headers: {
             // No incluir Content-Type para que el navegador establezca el boundary correcto para FormData
             'Accept': '*/*',
-            'Origin': 'https://felade.aurigital.com',
-            'Referer': 'https://felade.aurigital.com/',
+            'Origin': 'https://matrices.felade.org',
+            'Referer': 'https://matrices.felade.org',
           },
         }
       );
+      // const brevoResponse = await fetch(
+      //   'https://sibforms.com/serve/MUIFAFBRspRbB_21RjyCHxWxwZfrJgeIlwxkDN96f3drQ2myNgpz8PWpSHAmuAVtQuYY_b5hgx1ledQotCTlxVijO_P0k0-ZdBnjfBxBxNIuzspQe7Q8KRJ43kChFfeX0kJOP_NvttN7AZq90m2jKYB2w0t9WsQKBWJgKtlkZuE_E62CH036CL59Vs5Mzq4D0eONbmR_btXjqar3',
+      //   {
+      //     method: 'POST',
+      //     body: brevoFormData,
+      //     headers: {
+      //       // No incluir Content-Type para que el navegador establezca el boundary correcto para FormData
+      //       'Accept': '*/*',
+      //       'Origin': 'https://felade.aurigital.com',
+      //       'Referer': 'https://felade.aurigital.com/',
+      //     },
+      //   }
+      // );
       
       if (!brevoResponse.ok) {
         console.warn('Error al enviar a Brevo, pero continuamos el proceso:', 

@@ -14,6 +14,7 @@ const nextConfig = {
         'assets.brevo.com',
         'localhost',
         'felade.aurigital.com',
+        'matrices.felade.org',
       ],
     },
     // Las configuraciones de headers no funcionan en sitios estáticos,
