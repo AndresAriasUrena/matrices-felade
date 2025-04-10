@@ -26,7 +26,7 @@ const HeroSection = () => {
         <div className="flex justify-center items-center mb-12 max-w-4xl mx-auto">
           <div className="flex items-center justify-end w-1/2 pr-6">
             <Image
-              src="/images/upaz-logo-white.png"
+              src="/images/logoblanco.png"
               alt="UPAZ"
               width={250}
               height={75}
@@ -39,7 +39,7 @@ const HeroSection = () => {
           
           <div className="flex items-center justify-start w-1/2 pl-6">
             <Image
-              src="/images/logoblanco.png"
+              src="/images/upaz-logo-white.png"
               alt="FELADE"
               width={250}
               height={75}
