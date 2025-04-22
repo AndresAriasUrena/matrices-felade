@@ -31,11 +31,11 @@ const BenefitsSection = () => {
       title: "Clase Gratuita 2:",
       description: "Identificación de Riesgos BC/FT/FPADM (Clientes, Productos, Servicios, Canales y Zonas Geográficas)."
     },
-    {
-      icon: <FaCheckCircle />,
-      title: "Aprendizaje 3:",
-      description: "Entendimiento de las principales metodologías internacionales de gestión de riesgo."
-    }
+    // {
+    //   icon: <FaCheckCircle />,
+    //   title: "Aprendizaje 3:",
+    //   description: "Entendimiento de las principales metodologías internacionales de gestión de riesgo."
+    // }
   ];
 
   return (

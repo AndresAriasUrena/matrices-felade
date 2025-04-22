@@ -56,15 +56,21 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              El Paso a Paso para diseñar y testear matrices de riesgo de forma real y efectiva
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ lineHeight: '1.5' }}>
+            Conoce los pilares fundamentales para el diseño real y efectivo de una Matriz de Riesgo LA/FT/FPADM
             </h1>
+            {/* <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+              El Paso a Paso para diseñar y testear matrices de riesgo de forma real y efectiva
+            </h1> */}
             
             <h2 className="text-xl md:text-2xl font-medium mb-8 max-w-3xl mx-auto">
-              Aprende el método <strong>Probado</strong> para diseñar y testear matrices de riesgo de manera práctica y efectiva. Un taller en vivo donde transformarás la teoría en acción con pasos claros y aplicables de inmediato.
+            Aprende de la mano de un experto si su matriz cumple con un estandar funcional para cumplir con la normativa local e internacional
             </h2>
+            {/* <h2 className="text-xl md:text-2xl font-medium mb-8 max-w-3xl mx-auto">
+              Aprende el método <strong>Probado</strong> para diseñar y testear matrices de riesgo de manera práctica y efectiva. Un taller en vivo donde transformarás la teoría en acción con pasos claros y aplicables de inmediato.
+            </h2> */}
             <h3 className="text-lg md:text-xl font-medium mb-8 max-w-2xl mx-auto text-gray-200">
-              3 clases: 21, 22 y 23 de Abril <br/> Evento <strong>Online</strong> y <strong>sin costo.</strong>
+              2 clases: 21 y 22 Mayo | 6:00 pm (GTM -5 hora Panamá) <br/> Evento <strong>Online</strong> y <strong>sin costo.</strong> Vía Zoom
             </h3>
             
             

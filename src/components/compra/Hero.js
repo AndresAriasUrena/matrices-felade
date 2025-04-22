@@ -65,7 +65,7 @@ const Hero = () => {
         </motion.div>
         
         {/* Título y subtítulo principal */}
-        <motion.div 
+        {/* <motion.div 
           className="text-center max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -77,7 +77,27 @@ const Hero = () => {
           <h2 className="text-xl md:text-2xl font-medium mb-8">
             El Paso a Paso para diseñar y testear matrices de riesgo de forma real y efectiva.
           </h2>
-        </motion.div>
+        </motion.div> */}
+        <div className="flex flex-col items-center justify-center">
+                  {/* Hero Content */}
+                  <motion.div 
+                    className="w-full max-w-4xl text-center text-white"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                      El Paso a Paso para diseñar y testear matrices de riesgo de forma real y efectiva
+                    </h1>
+                    
+                    <h2 className="text-xl md:text-2xl font-medium mb-8 max-w-3xl mx-auto">
+                      Aprende el método <strong>Probado</strong> para diseñar y testear matrices de riesgo de manera práctica y efectiva. Un taller en vivo donde transformarás la teoría en acción con pasos claros y aplicables de inmediato.
+                    </h2>
+                  
+                    
+                    
+                  </motion.div>
+                </div>
       </div>
     </section>
   );
