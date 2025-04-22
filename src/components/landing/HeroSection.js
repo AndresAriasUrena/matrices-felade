@@ -64,7 +64,7 @@ const HeroSection = () => {
             </h1> */}
             
             <h2 className="text-xl md:text-2xl font-medium mb-8 max-w-3xl mx-auto">
-            Aprende de la mano de un experto si su matriz cumple con un estandar funcional para cumplir con la normativa local e internacional
+            Aprende de la mano de un experto si tu matriz cumple con un estándar funcional para cumplir con la normativa local e internacional.
             </h2>
             {/* <h2 className="text-xl md:text-2xl font-medium mb-8 max-w-3xl mx-auto">
               Aprende el método <strong>Probado</strong> para diseñar y testear matrices de riesgo de manera práctica y efectiva. Un taller en vivo donde transformarás la teoría en acción con pasos claros y aplicables de inmediato.
