@@ -298,8 +298,8 @@ const PricingSection = () => {
     {
       id: 'regular',
       name: 'Pago Único',
-      price: 575,
-      originalPrice: 775,
+      price: 397,
+      originalPrice: 575,
       description: 'Acceso completo con un solo pago',
       tag: 'POPULAR',
       features: [
@@ -307,7 +307,7 @@ const PricingSection = () => {
         'Taller presencial de dos días',
         'Plantilla modelo de matriz de riesgo',
         'Sesiones de seguimiento durante un mes',
-        'Certificación oficial',
+        'Taller oficial',
         'Todos los bonos incluidos'
       ],
       priceId: 'price_1R575HGeY0vAkyobOc2bHQdB' // Reemplazar con tu ID de precio real de Stripe
@@ -315,7 +315,7 @@ const PricingSection = () => {
     {
       id: 'installments',
       name: 'Plan en Cuotas',
-      price: 395,
+      price: 248.50,
       installments: '2 pagos',
       description: 'Mismo contenido, pagos flexibles',
       features: [
@@ -323,7 +323,7 @@ const PricingSection = () => {
         'Taller presencial de dos días',
         'Plantilla modelo de matriz de riesgo',
         'Sesiones de seguimiento durante un mes',
-        'Certificación oficial',
+        'Taller oficial',
         'Todos los bonos incluidos'
       ],
       priceId: 'price_1R57J2GeY0vAkyobULCiHyNZ' // Reemplazar con tu ID de precio real de Stripe para suscripción

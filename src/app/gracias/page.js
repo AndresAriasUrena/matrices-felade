@@ -37,7 +37,7 @@ function GraciasContent() {
         currency: 'USD',
         items: [{
           id: 'CERT-MATRIZ-RIESGO',
-          name: 'Certificación en Gestión de Riesgos BC/FT/FPADM',
+          name: 'Taller en Gestión de Riesgos BC/FT/FPADM',
           quantity: 1,
           price: 575.00
         }]
@@ -82,7 +82,7 @@ function GraciasContent() {
             </div>
             <h1 className="text-3xl font-bold mb-2">¡Pago confirmado!</h1>
             <p className="text-xl">
-              Tu inscripción a la Certificación en Gestión de Riesgos ha sido completada exitosamente.
+              Tu inscripción al Taller en Gestión de Riesgos ha sido completada exitosamente.
             </p>
           </div>
           
@@ -94,7 +94,7 @@ function GraciasContent() {
                 </p>
                 <p>
                   Gracias por confiar en nosotros para tu formación profesional. Estamos emocionados 
-                  de tenerte en nuestra certificación.
+                  de tenerte en nuestro taller.
                 </p>
               </div>
             )}

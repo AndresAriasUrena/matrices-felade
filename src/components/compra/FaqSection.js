@@ -101,7 +101,7 @@ const FaqSection = () => {
             PREGUNTAS FRECUENTES
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Respuestas a las dudas más comunes sobre nuestra certificación
+            Respuestas a las dudas más comunes sobre nuestro taller.
           </p>
         </motion.div>
         

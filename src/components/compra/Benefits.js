@@ -31,7 +31,9 @@ const Benefits = () => {
     "Tendrás la oportunidad de trabajar en casos de estudio reales, aplicando lo aprendido y fortaleciendo tu capacidad de análisis.",
     "Conocerás estrategias para establecer un enfoque basado en riesgos que priorice tus recursos de manera más eficiente.",
     "Obtendrás acceso a plantillas y recursos adicionales que facilitarán la implementación de matrices de riesgo en tu entorno laboral.",
-    "Te mostraré cómo comunicar tus hallazgos y recomendaciones de manera efectiva a diferentes partes interesadas dentro de tu organización."
+    "Te mostraré cómo comunicar tus hallazgos y recomendaciones de manera efectiva a diferentes partes interesadas dentro de tu organización.",
+    "Aprenderás a diseñar una matriz de riesgo en excel aplicando metodología de gestión de riesgo desde 0.",
+    "Aprenderás a utilizar la inteligencia artificial en la gestión de riesgo y a tener un aliado importante en tu gestión de cumplimiento.",
   ];
 
   return (
@@ -48,7 +50,7 @@ const Benefits = () => {
             BENEFICIOS DE TU INFOPRODUCTO
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Transforma tu capacidad para gestionar riesgos con nuestra certificación especializada.
+            Transforma tu capacidad para gestionar riesgos con nuestro taller especializado.
           </p>
         </motion.div>
         

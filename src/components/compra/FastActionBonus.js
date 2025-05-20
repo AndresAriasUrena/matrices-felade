@@ -67,10 +67,10 @@ const FastActionBonus = () => {
               </h3>
               <p className="text-lg mb-4">
                 Las primeras <strong>30 personas</strong> que se inscriban en las próximas 24 horas recibirán 
-                <strong> GRATIS</strong> GRATIS 1 sesión de asesoría personalizada semanal de 30 minutos con un experto vía zoom, durante 3 meses.
+                <strong> GRATIS</strong> una revisión personalizada por parte del experto del modelo desarrollado durante el taller.
               </p>
-              <div className="inline-block bg-secondary text-white px-6 py-3 rounded-lg font-bold text-xl">
-                Valorada en $997
+              <div className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-bold text-xl">
+                Valorada en <span className='line-through'>$997</span>
               </div>
             </div>
           </div>

@@ -7,7 +7,8 @@ import { useRouter } from 'next/navigation';
 const BrevoFormEmbed = ({ className, darkMode = false }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
-  const [iframeHeight, setIframeHeight] = useState(700); // Aumentando la altura inicial
+  // Aumentamos la altura inicial, especialmente para móviles
+  const [iframeHeight, setIframeHeight] = useState(850); 
   const iframeRef = useRef(null);
   
   // URL del formulario de Brevo
@@ -51,7 +52,9 @@ const BrevoFormEmbed = ({ className, darkMode = false }) => {
           
           // Ajustar tamaño del iframe si el mensaje incluye la altura
           if (data && data.type === 'resize' && data.height) {
-            setIframeHeight(data.height + 80); // Aumentar el margen extra
+            // Añadimos más margen para asegurar que se vea el botón
+            const extraMargin = window.innerWidth < 768 ? 150 : 80;
+            setIframeHeight(data.height + extraMargin);
           }
         } catch (error) {
           console.error('Error procesando mensaje del iframe:', error);
@@ -66,9 +69,9 @@ const BrevoFormEmbed = ({ className, darkMode = false }) => {
     const handleResize = () => {
       // Detectar si es móvil y ajustar la altura
       if (window.innerWidth < 768) {
-        setIframeHeight(750); // Más altura en móviles
+        setIframeHeight(950); // Aumentamos considerablemente la altura en móviles para asegurar que se vea el botón
       } else {
-        setIframeHeight(700); // Altura normal en desktop
+        setIframeHeight(750); // Altura para desktop
       }
     };
     
@@ -86,8 +89,10 @@ const BrevoFormEmbed = ({ className, darkMode = false }) => {
           
           if (iframeDoc && iframeDoc.body) {
             const scrollHeight = iframeDoc.body.scrollHeight;
+            // Añadimos margen extra para asegurar que se vea el botón
+            const extraMargin = window.innerWidth < 768 ? 150 : 80;
             if (scrollHeight > 500) {
-              setIframeHeight(scrollHeight + 80);
+              setIframeHeight(scrollHeight + extraMargin);
             }
           }
         }
@@ -96,9 +101,12 @@ const BrevoFormEmbed = ({ className, darkMode = false }) => {
       }
     };
     
-    // Verificar altura después de que el iframe se cargue
+    // Verificar altura después de que el iframe se cargue con intervalos
     const timer = setTimeout(checkHeight, 1000);
-    const timer2 = setTimeout(checkHeight, 2000); // Segunda verificación
+    const timer2 = setTimeout(checkHeight, 2000);
+    // Añadimos más verificaciones
+    const timer3 = setTimeout(checkHeight, 3000);
+    const timer4 = setTimeout(checkHeight, 5000);
     
     // Limpiar al desmontar
     return () => {
@@ -106,6 +114,8 @@ const BrevoFormEmbed = ({ className, darkMode = false }) => {
       window.removeEventListener('resize', handleResize);
       clearTimeout(timer);
       clearTimeout(timer2);
+      clearTimeout(timer3);
+      clearTimeout(timer4);
     };
   }, [router]);
   
@@ -179,12 +189,17 @@ const BrevoFormEmbed = ({ className, darkMode = false }) => {
       <style jsx global>{`
         .iframe-container iframe {
           width: 100%;
-          min-height: 500px;
+          min-height: 600px;
         }
         
         @media (max-width: 768px) {
           .iframe-container iframe {
-            min-height: 650px;
+            min-height: 850px; /* Aumentamos la altura mínima en móviles */
+          }
+          
+          /* Aseguramos que el contenedor sea suficientemente alto */
+          .iframe-container > div {
+            min-height: 850px !important; 
           }
         }
       `}</style>

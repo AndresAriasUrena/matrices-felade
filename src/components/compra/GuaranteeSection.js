@@ -31,14 +31,14 @@ const GuaranteeSection = () => {
               GARANTÍA DE SATISFACCIÓN 100%
             </h2>
             <p className="text-gray-700 mb-4">
-              Estamos tan seguros de la calidad de nuestra certificación que ofrecemos una 
+              Estamos tan seguros de la calidad de nuestro taller que ofrecemos una 
               garantía de devolución de dinero durante los primeros 14 días. Si por alguna 
               razón no estás satisfecho con el contenido, simplemente solicita un reembolso 
               y te devolveremos el 100% de tu inversión, sin preguntas.
             </p>
             <p className="text-gray-700 font-bold">
               No hay riesgo para ti. Queremos que tengas la tranquilidad de 
-              que estás invirtiendo en una certificación que realmente transformará tu capacidad 
+              que estás invirtiendo en un taller que realmente transformará tu capacidad 
               para gestionar riesgos en tu organización.
             </p>
           </div>

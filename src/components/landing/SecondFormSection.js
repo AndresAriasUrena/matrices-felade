@@ -27,7 +27,7 @@ const SecondFormSection = () => {
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col md:flex-row items-center gap-12">
+        <div className="flex flex-col md:flex-row items-start gap-12">
           {/* Content */}
           <motion.div 
             className="w-full md:w-1/2"
@@ -70,21 +70,30 @@ const SecondFormSection = () => {
             </div>
           </motion.div>
           
-          {/* Form */}
+          {/* Form - Ajustamos la altura mínima para móviles */}
           <motion.div 
-            className="w-full md:w-5/12 bg-white rounded-xl shadow-2xl text-gray-800"
+            className="w-full md:w-5/12 bg-white rounded-xl shadow-2xl text-gray-800 min-h-[850px] md:min-h-0"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: "-50px" }}
           >
-            <div className="">
+            <div className="h-full">
               {/* Componente de formulario Brevo */}
-              <BrevoFormEmbed className="w-full" />
+              <BrevoFormEmbed className="w-full h-full" />
             </div>
           </motion.div>
         </div>
       </div>
+      
+      {/* Estilos específicos para móviles */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .container {
+            padding-bottom: 100px; /* Espacio adicional en móviles */
+          }
+        }
+      `}</style>
     </section>
   );
 };

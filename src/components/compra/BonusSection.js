@@ -45,23 +45,30 @@ const BonusSection = () => {
       number: 1,
       title: "Plantilla Modelo de Matriz de Riesgo",
       description: "Te proporcionaremos una plantilla modelo especializada de matriz de riesgo, diseñada para simplificar el proceso de diseño y evaluación.",
-      value: 297,
+      value: 1000,
       image: "/images/bonos/bono1.png"
     },
     {
       number: 2,
-      title: "Sesiones de Seguimiento",
-      description: "Incluye tres sesiones de seguimiento durante el primer mes, donde se revisarán los avances de tu matriz de riesgo, asegurando una implementación efectiva y continua.",
+      title: "Paso a paso escrito para diseñar una matriz de riesgo.",
+      description: "Te proporcionaremos un documento con el paso a paso para diseñar una matriz de riesgo, de manera efectiva y acorde a las normas de cumplimiento.",
       value: 397,
       image: "/images/bonos/bono2.png"
     },
     {
       number: 3,
-      title: "Revisión de modelo de Matriz desarrollado",
-      description: "Recibirás una sesión personalizada que incluye la revisión del modelo desarrollado durante el taller",
-      value: 397,
-      image: "/images/bonos/bono3.png"
-    }
+      title: "Sesiones de Seguimiento",
+      description: "Incluye tres sesiones de seguimiento grupales durante el primer mes, donde se revisarán los avances de tu matriz de riesgo, asegurando una implementación efectiva y continua.",
+      value: 997,
+      image: "/images/bonos/bono2.png"
+    },
+    // {
+    //   number: 3,
+    //   title: "Revisión de modelo de Matriz desarrollado",
+    //   description: "Recibirás acceso una sesión que incluye la revisión del modelo desarrollado durante el taller. (Excusivo para las primeras 30 personas en inscribirse).",
+    //   value: 397,
+    //   image: "/images/bonos/bono3.png"
+    // }
   ];
   
   // Calcular el valor total

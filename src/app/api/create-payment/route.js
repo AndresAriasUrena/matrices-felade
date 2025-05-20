@@ -55,12 +55,12 @@ export async function POST(request) {
       regular: {
         amount: 575 * 100, // En centavos
         currency: 'usd',
-        description: 'Certificación en Gestión de Riesgos BC/FT/FPADM - Pago único',
+        description: 'Taller en Gestión de Riesgos BC/FT/FPADM - Pago único',
       },
       installments: {
         amount: 395 * 100, // En centavos
         currency: 'usd',
-        description: 'Certificación en Gestión de Riesgos BC/FT/FPADM - Primer pago',
+        description: 'Taller en Gestión de Riesgos BC/FT/FPADM - Primer pago',
       },
     };
     
@@ -102,7 +102,7 @@ export async function POST(request) {
     } else if (planId === 'installments') {
       // Para plan de cuotas, crear un producto y un precio
       const product = await stripe.products.create({
-        name: 'Certificación en Gestión de Riesgos BC/FT/FPADM - Plan Cuotas',
+        name: 'Taller en Gestión de Riesgos BC/FT/FPADM - Plan Cuotas',
         metadata: {
           planId: planId,
         },

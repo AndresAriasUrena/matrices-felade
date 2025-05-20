@@ -30,12 +30,7 @@ const BenefitsSection = () => {
       icon: <FaCheckCircle />,
       title: "Clase Gratuita 2:",
       description: "Identificación de Riesgos BC/FT/FPADM (Clientes, Productos, Servicios, Canales y Zonas Geográficas)."
-    },
-    // {
-    //   icon: <FaCheckCircle />,
-    //   title: "Aprendizaje 3:",
-    //   description: "Entendimiento de las principales metodologías internacionales de gestión de riesgo."
-    // }
+    }
   ];
 
   return (
@@ -53,11 +48,10 @@ const BenefitsSection = () => {
           </h2>
         </motion.div>
         
-        {/* Cambiando la estructura para un mejor layout */}
+        {/* Estructura para mejor layout */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          {/* Cambiando a un diseño de 2 columnas en vez de 3 para dar más espacio al formulario */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-            {/* Columna 1: Formulario de Registro - Ahora con más espacio */}
+            {/* Columna 1: Formulario de Registro - Con espacio adicional para móviles */}
             <motion.div 
               className="lg:border-r border-gray-200 flex flex-col"
               initial={{ opacity: 0, x: -20 }}
@@ -65,7 +59,7 @@ const BenefitsSection = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true, margin: "-50px" }}
             >
-              <div className="bg-gray-50 p-4 h-full flex flex-col justify-center">
+              <div className="bg-gray-50 p-4 h-full flex flex-col justify-center min-h-[850px] md:min-h-0">
                 {/* Título para el formulario */}
                 <div className="text-center mb-4">
                   <h3 className="text-xl font-bold text-primary">
@@ -78,7 +72,7 @@ const BenefitsSection = () => {
               </div>
             </motion.div>
             
-            {/* Columna 2: Beneficios y Gráfico - Combinados en una columna */}
+            {/* Columna 2: Beneficios y Gráfico */}
             <motion.div 
               className="p-6"
               initial={{ opacity: 0, x: 20 }}
