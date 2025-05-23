@@ -6,12 +6,13 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Timer from './Timer'; // Crearemos este componente después
 
+
 const Hero = () => {
-  // Fecha final para el contador (3 días desde ahora)
+  // Fecha final para el contador - 27 de Mayo a las 11:59pm hora de Panamá (UTC-5)
   const [endDate] = useState(() => {
-    const date = new Date();
-    date.setDate(date.getDate() + 3);
-    return date;
+    // Crear la fecha en la zona horaria de Panamá
+    const panamaDate = new Date('2025-05-27T23:59:59-05:00');
+    return panamaDate;
   });
   
   return (

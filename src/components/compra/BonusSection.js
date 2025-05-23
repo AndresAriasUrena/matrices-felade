@@ -60,7 +60,7 @@ const BonusSection = () => {
       title: "Sesiones de Seguimiento",
       description: "Incluye tres sesiones de seguimiento grupales durante el primer mes, donde se revisarán los avances de tu matriz de riesgo, asegurando una implementación efectiva y continua.",
       value: 997,
-      image: "/images/bonos/bono2.png"
+      image: "/images/bonos/bono3.png"
     },
     // {
     //   number: 3,
