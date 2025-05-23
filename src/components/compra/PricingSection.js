@@ -216,12 +216,31 @@ const CheckoutForm = ({ selectedPlan }) => {
             required
           >
             <option value="">Selecciona tu país</option>
-            <option value="PA">Panamá</option>
+            <option value="AR">Argentina</option>
+            <option value="BO">Bolivia</option>
+            <option value="BR">Brasil</option>
+            <option value="CA">Canadá</option>
+            <option value="CL">Chile</option>
             <option value="CO">Colombia</option>
-            <option value="MX">México</option>
-            <option value="PE">Perú</option>
             <option value="CR">Costa Rica</option>
+            <option value="CU">Cuba</option>
             <option value="EC">Ecuador</option>
+            <option value="SV">El Salvador</option>
+            <option value="GT">Guatemala</option>
+            <option value="HN">Honduras</option>
+            <option value="NI">Nicaragua</option>
+            <option value="PA">Panamá</option>
+            <option value="PY">Paraguay</option>
+            <option value="PE">Perú</option>
+            <option value="PR">Puerto Rico</option>
+            <option value="DO">República Dominicana</option>
+            <option value="SR">Suriname</option>
+            <option value="UY">Uruguay</option>
+            <option value="US">Estados Unidos</option>
+            <option value="VE">Venezuela</option>
+            <option value="GY">Guyana</option>
+            <option value="MX">México</option>
+            <option value="BZ">Belice</option>
           </select>
         </div>
       </div>
@@ -467,12 +486,31 @@ const PricingSection = () => {
                 required
               >
                 <option value="">Selecciona tu país</option>
-                <option value="PA">Panamá</option>
+                <option value="AR">Argentina</option>
+                <option value="BO">Bolivia</option>
+                <option value="BR">Brasil</option>
+                <option value="CA">Canadá</option>
+                <option value="CL">Chile</option>
                 <option value="CO">Colombia</option>
-                <option value="MX">México</option>
-                <option value="PE">Perú</option>
                 <option value="CR">Costa Rica</option>
+                <option value="CU">Cuba</option>
                 <option value="EC">Ecuador</option>
+                <option value="SV">El Salvador</option>
+                <option value="GT">Guatemala</option>
+                <option value="HN">Honduras</option>
+                <option value="NI">Nicaragua</option>
+                <option value="PA">Panamá</option>
+                <option value="PY">Paraguay</option>
+                <option value="PE">Perú</option>
+                <option value="PR">Puerto Rico</option>
+                <option value="DO">República Dominicana</option>
+                <option value="SR">Suriname</option>
+                <option value="UY">Uruguay</option>
+                <option value="US">Estados Unidos</option>
+                <option value="VE">Venezuela</option>
+                <option value="GY">Guyana</option>
+                <option value="MX">México</option>
+                <option value="BZ">Belice</option>
               </select>
             </div>
           </div>
