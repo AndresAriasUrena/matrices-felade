@@ -53,14 +53,16 @@ export async function POST(request) {
     // Definir precios según el plan seleccionado
     const planPrices = {
       regular: {
-        amount: 575 * 100, // En centavos
+        amount: 397 * 100, // En centavos (actualizado a $397)
         currency: 'usd',
         description: 'Taller en Gestión de Riesgos BC/FT/FPADM - Pago único',
+        priceId: 'price_1RQwzbGeY0vAkyob0atMo7Um'
       },
       installments: {
-        amount: 395 * 100, // En centavos
+        amount: 248.50 * 100, // En centavos (actualizado a $248.50)
         currency: 'usd',
-        description: 'Taller en Gestión de Riesgos BC/FT/FPADM - Primer pago',
+        description: 'Taller en Gestión de Riesgos BC/FT/FPADM - Plan en Cuotas',
+        priceId: 'price_1RQxBuGeY0vAkyobIu1kIQwF'
       },
     };
     
@@ -100,32 +102,18 @@ export async function POST(request) {
       });
       
     } else if (planId === 'installments') {
-      // Para plan de cuotas, crear un producto y un precio
-      const product = await stripe.products.create({
-        name: 'Taller en Gestión de Riesgos BC/FT/FPADM - Plan Cuotas',
-        metadata: {
-          planId: planId,
-        },
-      });
+      // Calcular la fecha exacta para terminar después de 2 pagos
+      const currentDate = new Date();
+      // Sumamos 2 meses (60 días + 5 días extra para asegurar que se procese el segundo pago)
+      const cancelAtDate = new Date(currentDate);
+      cancelAtDate.setDate(currentDate.getDate() + 65);
       
-      const price = await stripe.prices.create({
-        product: product.id,
-        unit_amount: planPrices[planId].amount,
-        currency: planPrices[planId].currency,
-        recurring: {
-          interval: 'month',
-          interval_count: 1,
-        },
-        metadata: {
-          installment: 'true',
-          installment_count: '2',
-        },
-      });
-      
-      // Crear una suscripción con límite de 2 pagos
+      // Crear una suscripción con límite de 2 pagos mediante fecha de cancelación
       const subscription = await stripe.subscriptions.create({
         customer: customer.id,
-        items: [{ price: price.id }],
+        items: [{ 
+          price: planPrices[planId].priceId // Usamos el ID del precio recurrente
+        }],
         payment_behavior: 'default_incomplete',
         payment_settings: {
           payment_method_types: ['card'],
@@ -137,8 +125,11 @@ export async function POST(request) {
           phone: customerInfo.phone,
           country: customerInfo.country,
           planId: planId,
-          max_payments: 2,
+          max_payments: '2',
+          is_limited_plan: 'true'
         },
+        // Programar la cancelación automática después de aproximadamente 2 meses
+        cancel_at: Math.floor(cancelAtDate.getTime() / 1000), // Convertir a timestamp UNIX (segundos)
         expand: ['latest_invoice.payment_intent'],
       });
       

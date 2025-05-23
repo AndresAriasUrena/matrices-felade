@@ -2,6 +2,7 @@
 "use client"; // Marcador para componente cliente
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { 
   FaCalendarAlt, 
@@ -17,7 +18,9 @@ import {
   FaHeadset,
   FaMoneyBillWave,
   FaPercentage,
-  FaTags
+  FaTags,
+  FaVideo,
+  FaLaptop
 } from 'react-icons/fa';
 
 const ContentItem = ({ icon, title, description, price }) => {
@@ -90,27 +93,15 @@ const CourseContent = () => {
       includedIn: "clases"
     },
     {
-      icon: <FaFileAlt />,
-      title: "PASO A PASO ESCRITO",
-      description: "Recibirás un documento detallado que describe el paso a paso para desarrollar una matriz de riesgo de BC/FT/FPADM, garantizando claridad y orientación en cada etapa.",
-      // price: "347"
-    },
-    {
-      icon: <FaTable />,
-      title: "PLANTILLA MODELO",
-      description: "Te proporcionaremos una plantilla modelo especializada de matriz de riesgo, diseñada para simplificar el proceso de diseño y evaluación.",
-      // price: "1,000"
-    },
-    {
-      icon: <FaHeadset />,
-      title: "SESIONES DE SEGUIMIENTO",
-      description: "Incluye sesiones de seguimiento durante el primer mes, donde se revisarán los avances de tu matriz de riesgo, asegurando una implementación efectiva y continua.",
-      // price: "397"
+      icon: <FaVideo />,
+      title: "GRABACIÓN DE TODAS LAS SESIONES",
+      description: "Todas las sesiones del taller serán grabadas y estarán disponibles para que puedas repasarlas en cualquier momento. Tendrás acceso ilimitado para reforzar tu aprendizaje a tu propio ritmo.",
+      includedIn: "bonus"
     },
     {
       icon: <FaMedal />,
       title: "CERTIFICADO DE PARTICIPACIÓN",
-      description: "Al completar el programa, recibirás una certificación oficial que valida tus conocimientos y participación.",
+      description: "Al completar el programa, recibirás una certificación oficial que valida tus conocimientos y participación, avalada por FELADE y reconocida internacionalmente.",
       includedIn: "bonus"
     }
   ];
@@ -137,6 +128,7 @@ const CourseContent = () => {
             Una formación completa con todo lo que necesitas para dominar la gestión de riesgos
           </p>
         </motion.div>
+        
         
         <div className="max-w-5xl mx-auto space-y-6">
           {contents.map((item, index) => (
@@ -167,12 +159,87 @@ const CourseContent = () => {
           </p>
         </motion.div>
         
+        {/* Nuevo bloque destacado sobre acceso a las grabaciones */}
+        {/* <motion.div 
+          className="mt-6 text-center bg-green-50 p-6 rounded-lg border border-green-100 max-w-5xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-4xl text-primary mb-4">
+            <FaLaptop className="inline-block" />
+          </div>
+          <h3 className="text-xl font-bold text-primary mb-2">APRENDE A TU RITMO</h3>
+          <p className="text-gray-700">
+            ¿No puedes asistir a todas las sesiones en vivo? ¡No hay problema! Todas las sesiones quedarán grabadas 
+            y disponibles para que puedas verlas cuando quieras y cuantas veces necesites. Maximiza tu aprendizaje 
+            con acceso permanente a todo el contenido.
+          </p>
+        </motion.div> */}
+        
+        {/* Sección con listado numerado del contenido del curso */}
+        {/* <motion.div 
+          className="mt-6 bg-gray-50 p-6 rounded-lg border border-gray-200 max-w-5xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-xl font-bold text-primary mb-4 text-center">CONTENIDO COMPLETO DEL PROGRAMA</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <ol className="list-decimal list-inside space-y-3 text-gray-700">
+                <li className="font-medium">DOS SESIONES INTENSIVAS DE METODOLOGÍA</li>
+                <li className="font-medium">TALLER DE DISEÑO DE MATRIZ EN EXCEL</li>
+                <li className="font-medium">TALLER DE IDENTIFICACIÓN DE RIESGOS</li>
+                <li className="font-medium">TALLER DE DISEÑO DE CONTROLES</li>
+              </ol>
+            </div>
+            <div>
+              <ol className="list-decimal list-inside space-y-3 text-gray-700" start="5">
+                <li className="font-medium">TALLER DE INTERPRETACIÓN DE RESULTADOS</li>
+                <li className="font-medium">TALLER DE COMUNICACIÓN ESTRATÉGICA DEL RIESGO</li>
+                <li className="font-medium">CERTIFICADO DE PARTICIPACIÓN</li>
+              </ol>
+              
+              <div className="mt-6 bg-primary bg-opacity-10 p-4 rounded-lg">
+                <h4 className="font-bold text-primary mb-2">BONOS INCLUIDOS:</h4>
+                <ul className="list-disc list-inside space-y-2 text-gray-700">
+                  <li>Plantilla modelo en Excel</li>
+                  <li>Paso a paso escrito</li>
+                  <li>Sesiones de seguimiento</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </motion.div> */}
+        {/* Imagen descriptiva del contenido del curso */}
+        <motion.div 
+          className="max-w-5xl mx-auto mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          <div className="relative w-full h-96 lg:h-[500px]">
+            <Image 
+              src="/images/modulos-curso.png" 
+              alt="Módulos del Curso de Matrices de Riesgo" 
+              fill
+              style={{ objectFit: 'contain' }}
+              className="rounded-lg"
+            />
+          </div>
+        </motion.div>
+        
         {/* Sección de precio y descuento */}
         <motion.div
           className="mt-12 bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-xl border border-green-100 max-w-5xl mx-auto"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

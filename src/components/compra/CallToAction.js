@@ -4,7 +4,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const CallToAction = ({ text = '¡QUIERO CERTIFICARME AHORA!', onClick, className = '' }) => {
+const CallToAction = ({ text = '¡ADQUIERE EL TALLER AHORA!', onClick, className = '' }) => {
   const handleClick = () => {
     // Desplazarse al formulario de pago cuando se hace clic
     const pricingSection = document.getElementById('pricing-section');

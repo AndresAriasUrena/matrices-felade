@@ -18,11 +18,11 @@ const CompraPage = () => {
     <main>
       <Hero />
       <Benefits />
-      <CallToAction text="¡QUIERO CERTIFICARME AHORA!" />
+      <CallToAction text="¡ADQUIERE EL TALLER AHORA!" />
       <CourseContent />
       <PricingSection />
       <GuaranteeSection />
-      <CallToAction text="¡QUIERO CERTIFICARME AHORA!" />
+      <CallToAction text="¡ADQUIERE EL TALLER AHORA!" />
       <BonusSection />
       <FastActionBonus />
       <FaqSection />

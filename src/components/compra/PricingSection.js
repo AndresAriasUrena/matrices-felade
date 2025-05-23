@@ -304,13 +304,13 @@ const PricingSection = () => {
       tag: 'POPULAR',
       features: [
         'Acceso inmediato a todos los materiales',
-        'Taller presencial de dos días',
+        'Taller virtual en vivo, grabación incluída',
         'Plantilla modelo de matriz de riesgo',
         'Sesiones de seguimiento durante un mes',
         'Taller oficial',
         'Todos los bonos incluidos'
       ],
-      priceId: 'price_1R575HGeY0vAkyobOc2bHQdB' // Reemplazar con tu ID de precio real de Stripe
+      priceId: 'price_1RQwzbGeY0vAkyob0atMo7Um' // Reemplazar con tu ID de precio real de StripeSe creó un precio nuevo llamado price_1RQwzbGeY0vAkyob0atMo7Um.
     },
     {
       id: 'installments',
@@ -320,13 +320,13 @@ const PricingSection = () => {
       description: 'Mismo contenido, pagos flexibles',
       features: [
         'Acceso inmediato a todos los materiales',
-        'Taller presencial de dos días',
+        'Taller virtual en vivo, grabación incluída',
         'Plantilla modelo de matriz de riesgo',
         'Sesiones de seguimiento durante un mes',
         'Taller oficial',
         'Todos los bonos incluidos'
       ],
-      priceId: 'price_1R57J2GeY0vAkyobULCiHyNZ' // Reemplazar con tu ID de precio real de Stripe para suscripción
+      priceId: 'price_1RQxBuGeY0vAkyobIu1kIQwF' // Reemplazar con tu ID de precio real de Stripe para suscripciónSe creó un precio nuevo llamado price_1RQxBuGeY0vAkyobIu1kIQwF.
     }
   ];
 
