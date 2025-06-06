@@ -8,10 +8,10 @@ import Timer from './Timer'; // Crearemos este componente después
 
 
 const Hero = () => {
-  // Fecha final para el contador - 27 de Mayo a las 11:59pm hora de Panamá (UTC-5)
+  // Fecha final para el contador - 20 de Junio a las 11:59pm hora de Panamá (UTC-5)
   const [endDate] = useState(() => {
     // Crear la fecha en la zona horaria de Panamá
-    const panamaDate = new Date('2025-05-27T23:59:59-05:00');
+    const panamaDate = new Date('2025-06-20T23:59:59-05:00');
     return panamaDate;
   });
   
@@ -56,49 +56,36 @@ const Hero = () => {
         
         {/* Contador de tiempo regresivo */}
         <motion.div 
-          className="bg-gray-800 bg-opacity-50 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-center"
+          className="bg-red-600 bg-opacity-80 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-center border-2 border-red-400"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="text-xl mb-3 font-medium">OFERTA ESPECIAL - TERMINA EN:</h3>
+          <h3 className="text-xl mb-3 font-bold text-yellow-300">🔥 OFERTA ESPECIAL LIMITADA - TERMINA EN: 🔥</h3>
           <Timer endDate={endDate} />
+          <p className="text-sm mt-2 text-yellow-200">
+            ¡Después del 20 de junio la oferta se cierra! No pierdas esta oportunidad única.
+          </p>
         </motion.div>
         
         {/* Título y subtítulo principal */}
-        {/* <motion.div 
-          className="text-center max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <h1 className="text-3xl md:text-5xl font-bold mb-6">
-            Matriz de Riesgo BC/FT/FPADM
-          </h1>
-          <h2 className="text-xl md:text-2xl font-medium mb-8">
-            El Paso a Paso para diseñar y testear matrices de riesgo de forma real y efectiva.
-          </h2>
-        </motion.div> */}
         <div className="flex flex-col items-center justify-center">
-                  {/* Hero Content */}
-                  <motion.div 
-                    className="w-full max-w-4xl text-center text-white"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                  >
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                      El Paso a Paso para diseñar y testear matrices de riesgo de forma real y efectiva
-                    </h1>
-                    
-                    <h2 className="text-xl md:text-2xl font-medium mb-8 max-w-3xl mx-auto">
-                      Aprende el método <strong>Probado</strong> para diseñar y testear matrices de riesgo de manera práctica y efectiva. Un taller en vivo donde transformarás la teoría en acción con pasos claros y aplicables de inmediato.
-                    </h2>
-                  
-                    
-                    
-                  </motion.div>
-                </div>
+          {/* Hero Content */}
+          <motion.div 
+            className="w-full max-w-4xl text-center text-white"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+              El Paso a Paso para diseñar y testear matrices de riesgo de forma real y efectiva
+            </h1>
+            
+            <h2 className="text-xl md:text-2xl font-medium mb-8 max-w-3xl mx-auto">
+              Aprende el método <strong>Probado</strong> para diseñar y testear matrices de riesgo de manera práctica y efectiva. Un taller en vivo donde transformarás la teoría en acción con pasos claros y aplicables de inmediato.
+            </h2>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

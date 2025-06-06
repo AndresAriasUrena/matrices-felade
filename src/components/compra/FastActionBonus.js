@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { FaClock, FaFire } from 'react-icons/fa';
+import { FaClock, FaFire, FaCalendarAlt } from 'react-icons/fa';
 
 const FastActionBonus = () => {
   const [availablePlaces, setAvailablePlaces] = useState(30);
@@ -63,14 +63,23 @@ const FastActionBonus = () => {
             </div>
             <div className="w-full md:w-2/3 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-4">
-                OFERTA EXCLUSIVA: ¡Solo para los primeros 30 registros!
+                OFERTA EXCLUSIVA: ¡Solo hasta el 20 de junio!
               </h3>
               <p className="text-lg mb-4">
-                Las primeras <strong>30 personas</strong> que se inscriban en las próximas 24 horas recibirán 
+                Las primeras <strong>30 personas</strong> que se inscriban antes del 
+                <strong> 20 de junio de 2025</strong> recibirán 
                 <strong> GRATIS</strong> una revisión personalizada por parte del experto del modelo desarrollado durante el taller.
               </p>
-              <div className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-bold text-xl">
+              <div className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-bold text-xl mb-4">
                 Valorada en <span className='line-through'>$997</span>
+              </div>
+              
+              {/* Nuevo elemento de fecha límite */}
+              <div className="bg-yellow-500 text-black rounded-lg p-3 mt-4">
+                <div className="flex items-center justify-center">
+                  <FaCalendarAlt className="mr-2" />
+                  <span className="font-bold">FECHA LÍMITE: 20 DE JUNIO, 2025</span>
+                </div>
               </div>
             </div>
           </div>
@@ -81,9 +90,14 @@ const FastActionBonus = () => {
               <h4 className="text-xl font-bold">DISPONIBILIDAD LIMITADA</h4>
               <FaFire className="text-secondary text-xl ml-2" />
             </div>
-            <p className="mb-4">¡Actúa rápido! Este bono exclusivo tiene disponibilidad limitada</p>
-            <div className="inline-block bg-white text-primary rounded-full px-6 py-3 font-bold text-2xl">
-              Quedan solo {availablePlaces} plazas
+            <p className="mb-4">¡Actúa antes del 20 de junio! Este bono exclusivo tiene disponibilidad limitada</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-white text-primary rounded-full px-6 py-3 font-bold text-xl">
+                Quedan solo {availablePlaces} plazas
+              </div>
+              <div className="bg-red-600 text-white rounded-full px-6 py-3 font-bold text-xl">
+                ⏰ Hasta 20 de Junio
+              </div>
             </div>
           </div>
         </div>

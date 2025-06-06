@@ -24,7 +24,7 @@ const CompraPage = () => {
       <GuaranteeSection />
       <CallToAction text="¡ADQUIERE EL TALLER AHORA!" />
       <BonusSection />
-      <FastActionBonus />
+      {/* <FastActionBonus /> */}
       <FaqSection />
       <TestimonialsSection />
       <CallToAction text="¡RESERVA TU LUGAR HOY!" />

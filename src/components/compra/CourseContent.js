@@ -106,10 +106,10 @@ const CourseContent = () => {
     }
   ];
 
-  // Valores fijos para evitar problemas con toLocaleString
+  // Valores actualizados
   const totalValue = "4,744";
-  const salePrice = "397";
-  const discountPercentage = 92; // Calculado manualmente
+  const salePrice = "575"; // Cambiado de "397" a "575"
+  const discountPercentage = 88; // Recalculado: ((4744-575)/4744)*100 = 87.9% ≈ 88%
 
   return (
     <section className="py-16 bg-white">
@@ -159,62 +159,6 @@ const CourseContent = () => {
           </p>
         </motion.div>
         
-        {/* Nuevo bloque destacado sobre acceso a las grabaciones */}
-        {/* <motion.div 
-          className="mt-6 text-center bg-green-50 p-6 rounded-lg border border-green-100 max-w-5xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <div className="text-4xl text-primary mb-4">
-            <FaLaptop className="inline-block" />
-          </div>
-          <h3 className="text-xl font-bold text-primary mb-2">APRENDE A TU RITMO</h3>
-          <p className="text-gray-700">
-            ¿No puedes asistir a todas las sesiones en vivo? ¡No hay problema! Todas las sesiones quedarán grabadas 
-            y disponibles para que puedas verlas cuando quieras y cuantas veces necesites. Maximiza tu aprendizaje 
-            con acceso permanente a todo el contenido.
-          </p>
-        </motion.div> */}
-        
-        {/* Sección con listado numerado del contenido del curso */}
-        {/* <motion.div 
-          className="mt-6 bg-gray-50 p-6 rounded-lg border border-gray-200 max-w-5xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-xl font-bold text-primary mb-4 text-center">CONTENIDO COMPLETO DEL PROGRAMA</h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <ol className="list-decimal list-inside space-y-3 text-gray-700">
-                <li className="font-medium">DOS SESIONES INTENSIVAS DE METODOLOGÍA</li>
-                <li className="font-medium">TALLER DE DISEÑO DE MATRIZ EN EXCEL</li>
-                <li className="font-medium">TALLER DE IDENTIFICACIÓN DE RIESGOS</li>
-                <li className="font-medium">TALLER DE DISEÑO DE CONTROLES</li>
-              </ol>
-            </div>
-            <div>
-              <ol className="list-decimal list-inside space-y-3 text-gray-700" start="5">
-                <li className="font-medium">TALLER DE INTERPRETACIÓN DE RESULTADOS</li>
-                <li className="font-medium">TALLER DE COMUNICACIÓN ESTRATÉGICA DEL RIESGO</li>
-                <li className="font-medium">CERTIFICADO DE PARTICIPACIÓN</li>
-              </ol>
-              
-              <div className="mt-6 bg-primary bg-opacity-10 p-4 rounded-lg">
-                <h4 className="font-bold text-primary mb-2">BONOS INCLUIDOS:</h4>
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                  <li>Plantilla modelo en Excel</li>
-                  <li>Paso a paso escrito</li>
-                  <li>Sesiones de seguimiento</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </motion.div> */}
         {/* Imagen descriptiva del contenido del curso */}
         <motion.div 
           className="max-w-5xl mx-auto mb-12"

@@ -3,6 +3,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaCalendarAlt } from 'react-icons/fa';
 
 const CallToAction = ({ text = '¡ADQUIERE EL TALLER AHORA!', onClick, className = '' }) => {
   const handleClick = () => {
@@ -34,11 +35,27 @@ const CallToAction = ({ text = '¡ADQUIERE EL TALLER AHORA!', onClick, className
             </span>
           </motion.button>
           
-          <div className="mt-4 text-primary-light">
-            <p className="flex items-center justify-center">
-              <span className="mr-2">⏰</span>
-              <span className="font-semibold">La oferta especial termina pronto. ¡No pierdas esta oportunidad!</span>
-            </p>
+          <div className="mt-6 space-y-2">
+            <div className="text-primary-light">
+              <p className="flex items-center justify-center">
+                <span className="mr-2">⏰</span>
+                <span className="font-semibold">La oferta especial termina el 20 de junio. ¡No pierdas esta oportunidad!</span>
+              </p>
+            </div>
+            
+            {/* Nuevo banner de urgencia */}
+            <motion.div 
+              className="bg-red-600 text-white rounded-lg p-3 max-w-md mx-auto"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="flex items-center justify-center">
+                <FaCalendarAlt className="mr-2" />
+                <span className="font-bold text-sm">FECHA LÍMITE: 20 DE JUNIO</span>
+              </div>
+              <p className="text-xs mt-1">Después de esta fecha el precio aumentará significativamente</p>
+            </motion.div>
           </div>
         </div>
       </div>
