@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaCheck, FaCreditCard, FaLock, FaCalendarAlt, FaWhatsapp, FaEnvelope, FaUniversity, FaGlobe, FaPhone } from 'react-icons/fa';
+import { FaCheck, FaCreditCard, FaLock, FaCalendarAlt, FaWhatsapp, FaEnvelope, FaUniversity, FaGlobe, FaPhone, FaVideoSlash } from 'react-icons/fa';
 import { loadStripe } from '@stripe/stripe-js';
 
 // Cargar Stripe con tu clave publicable
@@ -119,7 +119,7 @@ const AlternativePaymentMethods = () => {
         
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a 
-            href="https://wa.me/50769999999?text=Hola, estoy interesado en el taller de matrices de riesgo y me gustaría coordinar el pago por transferencia bancaria" 
+            href="https://wa.me/50640001400?text=Hola, estoy interesado en el taller de matrices de riesgo y me gustaría coordinar el pago por transferencia bancaria" 
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg flex items-center justify-center transition-colors duration-300 font-semibold"
@@ -128,10 +128,12 @@ const AlternativePaymentMethods = () => {
           </a>
           
           <a 
-            href="mailto:soporte@felade.org?subject=Consulta sobre pago por transferencia&body=Hola, estoy interesado en el taller de matrices de riesgo y me gustaría coordinar el pago por transferencia bancaria. Mi país es: [INDICA TU PAÍS]" 
-            className="bg-primary hover:bg-primary-light text-white py-3 px-6 rounded-lg flex items-center justify-center transition-colors duration-300 font-semibold"
+            href="https://calendar.app.google/CU3N3vXoCXpjwHH38" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg flex items-center justify-center transition-colors duration-300 font-semibold"
           >
-            <FaEnvelope className="mr-2" /> Email - Asesor de Pagos
+            <FaVideoSlash className="mr-2" /> Agendar Video Llamada
           </a>
         </div>
         
@@ -144,12 +146,15 @@ const AlternativePaymentMethods = () => {
             💡 Te ayudaremos a encontrar la opción de pago más conveniente según tu país
             <br />
             ⚡ Respuesta en menos de 2 horas durante horario laboral
+            <br />
+            📅 Agenda una videollamada para asesoría personalizada
           </p>
         </div>
       </div>
     </motion.div>
   );
 };
+
 const PricingSection = () => {
   const [selectedPlan, setSelectedPlan] = useState('regular');
   const [formData, setFormData] = useState({
